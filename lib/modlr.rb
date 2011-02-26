@@ -1,4 +1,4 @@
-require "modlr/fname"
+require "modlr/fname.rb"
 
 module Modlr
   ##
