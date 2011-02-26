@@ -15,7 +15,7 @@ module Modlr
   
   end
   
-  def self.modlr(model, number, &args)
+  def self.modlr(model, number, args)
       model.new.is_a?(ActiveRecord::Base)
       count = model.count
       if count >= number
