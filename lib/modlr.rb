@@ -24,7 +24,7 @@ module Modlr
   end
   
   def self.rand_first_name
-    self.fnames[rand(self.FNAMES.count)]
+    self.fnames[rand(self.fnames.count)]
   end
   
   
