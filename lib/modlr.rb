@@ -1,4 +1,4 @@
-require "modlr/fnames"
+require "modlr/fname"
 
 module Modlr
   ##
@@ -28,8 +28,7 @@ module Modlr
   def self.rand_first_name
     self.fnames[rand(self.fnames.count)]
   end
-  
-  
+ 
   
   
 
