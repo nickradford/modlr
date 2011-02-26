@@ -1,3 +1,3 @@
 module Modlr
-  VERSION = "0.0.3.a"
+  VERSION = "0.0.4"
 end
