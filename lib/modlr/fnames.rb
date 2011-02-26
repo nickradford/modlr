@@ -1,5 +1,5 @@
 module Modlr
-  module Fname
+  module Name
     FNAMES = ["JAMES", "JOHN", "ROBERT", "MICHAEL", "WILLIAM", 
              "DAVID", "RICHARD", "CHARLES", "JOSEPH", "THOMAS", 
              "CHRISTOPHER", "DANIEL", "PAUL", "MARK", "DONALD", 
