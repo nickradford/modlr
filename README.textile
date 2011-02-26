@@ -1,0 +1,11 @@
+h1. Modlr
+
+*Modlr* is a test data generation utility for Ruby on Rails which allows specification of data type (names, email addresses, phone numbers, etc).
+
+== <hr/> ==
+
+h2. Installation
+
+In *Rails 3*, add this to your Gemfile and the run the *bundle* command.
+
+bc. gem 'modlr'
