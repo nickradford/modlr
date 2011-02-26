@@ -1,5 +1,5 @@
 
-module Modlr
+class Modlr
   require "modlr/fname"
   
   ##
