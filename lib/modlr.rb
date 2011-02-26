@@ -8,8 +8,11 @@ module Modlr
   #
   #
   ##  
+  def initialize
   
-  module ModlrSetup
+  end
+  
+  class Modlr
     def modlr(model, number, &args)
       puts model, number, args
     end
