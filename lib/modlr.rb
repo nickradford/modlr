@@ -1,6 +1,6 @@
 
 module Modlr
-  require File.join(File.expand_path(File.dirname(__FILE__)), "modlr", "fnames")
+  require_relative "modlr/fnames"
   
   ##
   #  modlr :class, number_of_records, {:field => :type, :field => type}
