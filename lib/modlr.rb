@@ -15,12 +15,12 @@ module Modlr
   
   end
   
-  def self.modlr(args)
-      #args[:model].new.is_a?(ActiveRecord::Base)
-      #count = model.count
-      #if count >= number
+  def self.modlr(model, args)
+      model.new.is_a?(ActiveRecord::Base)
+      count = model.count
+      if count >= args[:number]
         "No new records created: #{model} currently has #{count} records." 
-      #end
+      end
       args.each do |key, value|
         puts key, value
       end
