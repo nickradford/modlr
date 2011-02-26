@@ -1,6 +1,6 @@
 
 class Modlr
-  require "fname"
+  require "modlr/fnames"
   
   ##
   #  modlr :class, number_of_records, {:field => :type, :field => type}
