@@ -1,6 +1,6 @@
 
 class Modlr
-  include "modlr/fname"
+  include fname
   
   ##
   #  modlr :class, number_of_records, {:field => :type, :field => type}
