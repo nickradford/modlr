@@ -1,6 +1,6 @@
 module Modlr
   def self.included(base)
-    base.extend ClassMethods    
+    base.extend nil    
   end
 end
 
