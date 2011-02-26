@@ -1,6 +1,6 @@
 
 module Modlr
-  require File.join(File.expand_path(File.dirname(__FILE__)), "modlr", "fnames")
+  require File.join(File.expand_path(File.dirname(__FILE__)), "modlr", "names")
   
   ##
   #  modlr :class, number_of_records, {:field => :type, :field => type}
@@ -25,9 +25,7 @@ module Modlr
   end
   
   
-  def self.rand_first_name
-    Name::FNAMES[rand(Name::FNAMES.count)]
-  end
+  
  
   
   
