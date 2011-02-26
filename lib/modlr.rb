@@ -17,9 +17,10 @@ module Modlr
   #  will create 100 user records with names and ages which make sense.
   #
   #
-  ##  
-  def initialize
-  
+  ##
+  def self.read_config_file
+    data = File.read("config/modlr.rb")
+    eval(data)
   end
   
   def self.modlr(model, args = nil)
@@ -49,9 +50,9 @@ module Modlr
               when :child
                 Age.child
               when :phone
-                Phone.rand
+                Phone.random
               when :address
-                Address.rand
+                Address.random
               when :email
                 Email.us
             end

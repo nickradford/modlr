@@ -1,0 +1,70 @@
+#!/usr/bin/env ruby
+
+require 'optparse'
+require 'fileutils'
+
+OptionParser.new do |opts|
+  opts.banner = "Usage: #{File.basename($0)} [path]"
+
+  begin
+    opts.parse!(ARGV)
+  rescue OptionParser::ParseError => e
+    warn e.message
+    puts opts
+    exit 1
+  end
+end
+
+if ARGV.empty?
+  abort "Please specify the directory to set up Modlr, e.g. `#{File.basename($0)} .'"
+elsif !File.exists?(ARGV.first)
+  abort "`#{ARGV.first}' does not exist."
+elsif !File.directory?(ARGV.first)
+  abort "`#{ARGV.first}' is not a directory."
+elsif ARGV.length > 1
+  abort "Too many arguments; please specify only the directory to set up Modlr."
+end
+
+
+configcontent = <<-FILE
+# Use this file to easily set up which models you want to use Modlr with.
+# 
+# For documentation, check out http://nicholasradford.com/modlr.html
+#
+# eg. modlr User, {:number => 32, :client_name => :name, :client_email => :email}  
+FILE
+configfile = 'config/modlr.rb'
+
+initcontent = <<-FILE
+require "modlr"
+Modlr.read_config_file
+FILE
+initfile = 'config/initializers/modlr.rb'
+
+base = ARGV.shift
+
+configfile = File.join(base, configfile)
+if File.exists?(configfile)
+  warn "[skip] `#{configfile}' already exists"
+elsif File.exists?(configfile.downcase)
+  warn "[skip] `#{configfile.downcase}' exists, which could conflict with `#{configfile}'"
+elsif !File.exists?(File.dirname(configfile))
+  warn "[skip] directory `#{File.dirname(configfile)}' does not exist"
+else
+  puts "[add] writing `#{configfile}'"
+  File.open(configfile, "w") { |f| f.write(configcontent) }
+end
+
+initfile = File.join(base, initfile)
+if File.exists?(initfile)
+  warn "[skip] `#{initfile}' already exists"
+elsif File.exists?(initfile.downcase)
+  warn "[skip] `#{initfile.downcase}' exists, which could conflict with `#{initfile}'"
+elsif !File.exists?(File.dirname(initfile))
+  warn "[skip] directory `#{File.dirname(initfile)}' does not exist"
+else
+  puts "[add] writing `#{initfile}'"
+  File.open(initfile, "w") { |f| f.write(initcontent) }
+end
+
+puts "[done] Modlr set up successfully!"

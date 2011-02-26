@@ -1,7 +1,7 @@
 module Modlr
   module Email
     def self.us
-      "mandrig@gmail.com"
+      Name.rand_first_name + "." + Name.rand_last_name + "@" + Name.rand_last_name + ".com"
     end
   end
 end
