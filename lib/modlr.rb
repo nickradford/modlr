@@ -1,6 +1,7 @@
-require "modlr/fname.rb"
 
 module Modlr
+  require "modlr/fname.rb"
+  
   ##
   #  modlr :class, number_of_records, {:field => :type, :field => type}
   #  
@@ -14,16 +15,15 @@ module Modlr
   
   end
   
-  class Modlr
-    def self.modlr(model, number, &args)
-        model.new.is_a?(ActiveRecord::Base)
-        count = model.count
-        if count >= number
-          "No new records created: #{model} currently has #{count} records." 
-        end
+  def self.modlr(model, number, &args)
+      model.new.is_a?(ActiveRecord::Base)
+      count = model.count
+      if count >= number
+        "No new records created: #{model} currently has #{count} records." 
+      end
       
-    end
   end
+  
   
   def self.rand_first_name
     self.fnames[rand(self.fnames.count)]
