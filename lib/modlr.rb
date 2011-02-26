@@ -21,6 +21,9 @@ module Modlr
       if count >= number
         "No new records created: #{model} currently has #{count} records." 
       end
+      args.each do |key, value|
+        puts key, value
+      end
       
   end
   
