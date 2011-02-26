@@ -13,7 +13,7 @@ module Modlr
   end
   
   class Modlr
-    def modlr(model, number, &args)
+    def self.modlr(model, number, &args)
       puts model, number, args
     end
     
