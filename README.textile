@@ -2,7 +2,7 @@ h1. Modlr
 
 *Modlr* is a test data generation utility for Ruby on Rails which allows specification of data type (names, email addresses, phone numbers, etc).
 
-== <hr/> ==
+notextile. <hr/>
 
 h2. Installation
 
